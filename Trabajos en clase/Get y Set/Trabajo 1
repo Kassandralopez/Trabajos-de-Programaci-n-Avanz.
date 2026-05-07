@@ -1,0 +1,48 @@
+package negocio;
+
+import java.util.Scanner;
+
+public class datosNegocio {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		Newclase cliente1 = new Newclase(null, null, 0);
+
+		int opciones;
+
+		do {
+			System.out.println(" Negocio - Elige la opción que desea:");
+			System.out.println("1. Ingresar cliente");
+			System.out.println("2. Mostrar cliente");
+			System.out.println("3.Cerrar ");
+
+			opciones = entrada.nextInt();
+
+			switch (opciones) {
+			case 1:
+				System.out.println("Has elegido la opción 1");
+				System.out.println("Ingrese el nombre del cliente:");
+				String nombreCliente = entrada.next();
+				cliente1.setnombre(nombreCliente);
+
+				System.out.println("Ingrese el apellido:");
+				String apellidoCliente = entrada.next();
+				cliente1.setapellido(apellidoCliente);
+				System.out.println("Ingrese la cedula:");
+				int cedulaCliente = entrada.nextInt();
+				cliente1.setcedula(cedulaCliente);
+				break;
+
+			case 2:
+				System.out.println("Has elegido la opcion 2");
+				System.out.println(cliente1.getnombre()+cliente1.getapellido()+cliente1.getcedula());
+				break;
+			case 3:
+				System.out.println("Has elegido la opcion 3, gracias por usar este programa.");
+			
+			break;}
+		} while (opciones != 3);
+		entrada.close();
+	}
+
+}
