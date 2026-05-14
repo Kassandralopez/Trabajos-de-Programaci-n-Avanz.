@@ -1,0 +1,91 @@
+package herencia;
+
+public abstract class Vehiculo {
+	private String modelo;
+	private String nroMotor;
+	private String color;
+	private int cantRuedas;
+	
+	
+	public void setmodelo(String a) {
+		this.modelo=a;
+	}
+	public String getmodelo() {
+		return modelo;
+	}
+	public void setnroMotor(String b) {
+		this.modelo=b;
+	}
+	public String getnromotor() {
+		return nroMotor;
+	}
+	public void setcolor(String c) {
+		this.color=c;
+	}
+	public String getcolor() {
+		return color;
+	}
+	public void setcantRuedas(int d) {
+		this.cantRuedas=d;
+	}
+	public int getcantRuedas() {
+		return cantRuedas;
+	}
+	public Vehiculo (String a, String b, String c) {
+		this.modelo=a;
+		this.nroMotor=b;
+		this.color=c;
+}
+}
+
+
+
+//Nuevo class
+
+package herencia;
+
+public class Moto extends Vehiculo{
+	public Moto(String a, String b, String c, int cantPosapies, String tipoManubro, String colorCasco) {
+		super(a, b, c);
+		this.cantPosapies = cantPosapies;
+		this.tipoManubro = tipoManubro;
+		this.colorCasco = colorCasco;
+	}
+public static void main(String[] args) {}
+			private int cantPosapies;
+			private String tipoManubro;
+			private String colorCasco;
+			
+			public void setcantPosapies(int e) {
+				this.cantPosapies=e;
+			}
+			public int getposapies() {
+				return cantPosapies;
+			}
+			public void settipoManubro(String f) {
+				this.tipoManubro=f;
+			}
+			public String tipoManubro() {
+				return tipoManubro;
+			}
+			public void setcolorCasco(String g) {
+				this.colorCasco=g;
+			}
+			public String getcolorCasco() {
+				return colorCasco;
+			}
+
+}
+//Nuevo class
+package herencia;
+public class Gestor {
+
+	public static void main(String[] args) {
+		
+		Vehiculo vehiculo1=new Vehiculo("Monocilíndrico","12345","Rojo",2);
+		System.out.println(vehiculo1.getmodelo());
+
+		
+	}
+
+}
