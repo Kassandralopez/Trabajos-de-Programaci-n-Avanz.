@@ -1,0 +1,43 @@
+package supermercado;
+
+public abstract class Producto {
+	 String colorProducto;
+	 String nombreProducto;
+	 int precioProdcto;
+	 String publicoDirigido;
+	
+	public String getcolorProducto() {
+		return colorProducto;
+	}
+	public void setcolorProducto(String a) {
+		this.colorProducto=a;
+	}
+	
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+	public void setNombreProducto(String b) {
+		this.nombreProducto = b;
+	}
+	public int getPrecioProdcto() {
+		return precioProdcto;
+	}
+	public void setPrecioProdcto(int c) {
+		this.precioProdcto = c;
+	}
+	public String getPublicoDirigido() {
+		return publicoDirigido;
+	}
+	public void setPublicoDirigido(String d) {
+		this.publicoDirigido = d;
+	}
+	public Producto(String a, String b, int c, String d) {
+		this.colorProducto=a;
+		this.nombreProducto=b;
+		this.precioProdcto=c;
+		this.publicoDirigido=d;
+				
+	}
+	
+
+}
