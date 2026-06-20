@@ -1,0 +1,33 @@
+package supermercado;
+
+public class Ropa extends Producto{
+	public Ropa(String a, String b, int c, String d,String materialRopa,String diseñoRopa) {
+	super (a,b,c,d);
+		this.materialRopa=materialRopa;
+		this.diseñoRopa=diseñoRopa;
+	}
+	
+		 String materialRopa;
+		 String diseñoRopa;
+		
+		
+		public String getMaterialRopa() {
+			return materialRopa;
+		}
+
+		public void setMaterialRopa(String materialRopa) {
+			this.materialRopa = materialRopa;
+		}
+
+		public String getDiseñoRopa() {
+			return diseñoRopa;
+		}
+
+		public void setDiseñoRopa(String diseñoRopa) {
+			this.diseñoRopa = diseñoRopa;
+		}
+	}
+
+	
+
+
