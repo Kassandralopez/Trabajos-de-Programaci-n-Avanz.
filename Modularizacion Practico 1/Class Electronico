@@ -1,0 +1,29 @@
+package supermercado;
+
+public class Electronico extends Producto {
+	private String garantia;
+	private String cargaElectrica;
+	
+	public Electronico(String a, String b, int c, String d, String cargaElectrica, String garantia) {
+		super(a, b, c, d);
+		this.cargaElectrica = cargaElectrica;
+		this.garantia = garantia;
+	}
+
+	public String getcargaElectrica() {
+		return cargaElectrica;
+	}
+
+	public void setCargaElectrica(String cargaElectrica) {
+		this.cargaElectrica = cargaElectrica;
+	}
+
+	public String getGarantia() {
+		return garantia;
+	}
+
+	public void setGarantia(String garantia) {
+		this.garantia = garantia;
+	}
+
+}
