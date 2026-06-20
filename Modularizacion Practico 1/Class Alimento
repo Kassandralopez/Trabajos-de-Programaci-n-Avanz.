@@ -1,0 +1,35 @@
+package supermercado;
+
+public class Alimento extends Producto {
+
+	 String fechaEnvasado;
+	 String fechaVencimiento;
+
+	public Alimento(String a, String b, int c, String d, String fechaEnvasado, Object fechaVencimiento) {
+		super(a, b, c, d);
+		this.fechaEnvasado = fechaEnvasado;
+		this.fechaVencimiento = (String) fechaVencimiento;
+		}
+	String getFechaEnvasado() {
+		return fechaEnvasado;
+	}
+
+	public void setFechaEnvasado(String fechaEnvasado) {
+		this.fechaEnvasado = fechaEnvasado;
+	}
+
+	public Object getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+
+	public void setFechaVencimiento(Object fechaVencimiento) {
+		this.fechaVencimiento = (String) fechaVencimiento;
+	
+
+
+	}
+
+
+	}
+
+
