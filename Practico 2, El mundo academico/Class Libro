@@ -1,0 +1,23 @@
+package elMundoAcademico;
+
+public class Libro extends Publicacion  {
+	private String cantCapitulos;
+	private String trama;
+	public Libro(String fechaPublicada, String autor, String cantPaginas,String codigoUnico, String cantCapitulos, String trama) {
+		super(fechaPublicada, autor, cantPaginas,codigoUnico);
+		this.cantCapitulos = cantCapitulos;
+		this.trama = trama;
+	}
+	public String getCantCapitulos() {
+		return cantCapitulos;
+	}
+	public void setCantCapitulos(String cantCapitulos) {
+		this.cantCapitulos = cantCapitulos;
+	}
+	public String getTrama() {
+		return trama;
+	}
+	public void setTrama(String trama) {
+		this.trama = trama;
+	}
+}
