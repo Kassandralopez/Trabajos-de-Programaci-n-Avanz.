@@ -1,0 +1,20 @@
+package arte;
+
+public class Fotografia extends ObraArte {
+	private String tipoCamara;
+
+	public String getTipoCamara() {
+		return tipoCamara;
+	}
+
+	public void setTipoCamara(String tipoCamara) {
+		this.tipoCamara = tipoCamara;
+	}
+
+	public Fotografia(String codigoUnico, String autor, String tipoCamara) {
+		super(codigoUnico, autor);
+		this.tipoCamara = tipoCamara;
+	}
+	
+
+}
