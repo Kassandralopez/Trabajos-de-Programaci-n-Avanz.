@@ -1,0 +1,25 @@
+package arte;
+
+public class Pintura extends ObraArte{
+private String tipoPintura;
+private String tipoLienzo;
+
+
+public String getTipoPintura() {
+	return tipoPintura;
+}
+public void setTipoPintura(String tipoPintura) {
+	this.tipoPintura = tipoPintura;
+}
+public String getTipoLienzo() {
+	return tipoLienzo;
+}
+public void setTipoLienzo(String tipoLienzo) {
+	this.tipoLienzo = tipoLienzo;
+}
+public Pintura(String codigoUnicoPintura, String autor, String tipoPintura, String tipoLienzo) {
+	super(codigoUnicoPintura, autor);
+	this.tipoPintura = tipoPintura;
+	this.tipoLienzo = tipoLienzo;
+}
+}
