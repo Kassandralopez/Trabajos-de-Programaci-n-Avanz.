@@ -1,0 +1,105 @@
+package bobConstruye;
+import java.util.Scanner;
+public class Main {
+		static Scanner entrada=new Scanner(System.in);
+	
+			public static void main(String[] args) {
+				Casa Casa[] = new Casa[10];
+				Apartamento Apartamento[]=new Apartamento [10];
+				
+			
+				int opciones;
+				do {
+					System.out.println("Ingrese la opcion que desea realizar:");
+					System.out.println("1.Ingresar");
+					System.out.println("2.Listar");
+					System.out.println("3.Salir");
+					opciones=entrada.nextInt();
+					
+					switch(opciones) {
+					case 1: 
+						System.out.println("");
+						System.out.println("Ingreso de datos de Casa");
+						System.out.println("Ingrese su codigo unico:");
+						String codigoUnicoCasa=entrada.next();
+						System.out.println("Ingrese la cantidad de habitaciones:");
+						int cantHabitacionesCasa=entrada.nextInt();
+						System.out.println("Ingrese la cantidad de pisos que tiene:");
+						int cantPisosCasa=entrada.nextInt();
+						System.out.println("Ingrese la cantidad de ventanas que tiene:");
+						int cantidadVentanasCasa=entrada.nextInt();
+						System.out.println("Ingrese si tiene patio: ");
+						String tienePatioCasa=entrada.next();
+						
+						altaIngresoCasa(Casa,codigoUnicoCasa,cantHabitacionesCasa,cantPisosCasa,cantidadVentanasCasa,tienePatioCasa);
+						System.out.println("");
+						System.out.println("Ingreso de datos de Apartamento");
+						System.out.println("Ingrese su codigo unico:");
+						String codigoUnicoApartamento=entrada.next();
+						System.out.println("Ingrese la cantidad de habitaciones:");
+						int cantHabitacionesApartamento=entrada.nextInt();
+						System.out.println("Ingrese la cantidad de pisos que tiene:");
+						int cantPisosApartamento=entrada.nextInt();		
+						System.out.println("Ingrese el tipo de apartamento:");
+						String tipoApartamento=entrada.next();
+						
+						altaIngresoApartamento(Apartamento,codigoUnicoApartamento,cantHabitacionesApartamento,cantPisosApartamento,tipoApartamento);
+						break;
+					case 2:
+						System.out.println("Listando:");
+						listarCasa(Casa);
+						listarApartamento(Apartamento);
+						break;
+						
+					case 3:
+						System.out.println("Saliendo");
+						break;
+						default:
+							System.out.println("Error");
+						
+					}
+				}while(opciones !=3);
+	}
+
+			
+			public static void altaIngresoCasa(Casa[]ar,String codigoUnicoCasa,int cantHabitacionesCasa,int cantPisosCasa,int cantidadVentanasCasa,String tienePatioCasa) {
+				for (int i=0;i<ar.length;i++)
+					if(ar[i]==null) {
+						ar[i]= new Casa(codigoUnicoCasa,cantHabitacionesCasa,cantPisosCasa,cantidadVentanasCasa,tienePatioCasa);
+						break;
+					
+					}
+			}
+
+			public static void altaIngresoApartamento(Apartamento[]ar,String codigoUnicoApartamento,int cantHabitacionesApartamento,int cantPisosApartamento,String tipoApartamento) {
+				for (int i=0;i<ar.length;i++)
+					if(ar[i]==null) {
+						ar[i]= new Apartamento(codigoUnicoApartamento,cantHabitacionesApartamento,cantPisosApartamento,tipoApartamento);
+						break;
+		
+		}
+}
+			public static void listarCasa(Casa[] Casa) {
+				for (int i=0;i<Casa.length;i++) {
+					if(Casa[i]!=null) {
+						
+					
+					System.out.println("Codigo Unico de Casa:"+Casa[i].getCodigoUnico());
+					System.out.println("Cantidad de habitaciones:"+Casa[i].getCantHabitaciones());
+					System.out.println("Cantidad de pisos:"+Casa[i].getCantPisos());
+					System.out.println("Tiene patio:"+Casa[i].getTienePatio());
+					System.out.println("Cantidad de ventanas:"+Casa[i].getCantidadVentanas());
+					}
+				}
+			}
+			public static void listarApartamento(Apartamento[] Apartamento) {
+				for (int i=0; i<Apartamento.length;i++) {
+					if(Apartamento[i]!=null) {
+					System.out.println("Codigo Unico de Apartamento:"+Apartamento[i].getCodigoUnico());
+					System.out.println("Cantidad de habitaciones:"+Apartamento[i].getCantHabitaciones());
+					System.out.println("Cantidad de pisos:"+Apartamento[i].getCantPisos());
+					System.out.println("Tipo de apartamento:"+Apartamento[i].getTipoApartamento());
+					}
+			}
+}
+}
