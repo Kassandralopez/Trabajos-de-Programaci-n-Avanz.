@@ -1,0 +1,145 @@
+package arte;
+
+import java.util.Scanner;
+
+public class Gestor {
+	static Scanner entrada = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Pintura pinturas[] = new Pintura[10];
+		Escultura esculturas[] = new Escultura[10];
+		Fotografia fotografias[]=new Fotografia[10];
+		
+		int opciones;
+		do {
+			System.out.println("Ingrese la opcion que desea realizar:");
+			System.out.println("1.Ingresar");
+			System.out.println("2.Listar");
+			System.out.println("3.Salir");
+			opciones=entrada.nextInt();
+			
+			switch (opciones) {
+			case 1: 
+				System.out.println("");
+				System.out.println("Ingreso de datos de Pintura");
+				System.out.println("");
+				System.out.println("Ingrese su codigo:");
+				String codigoUnicoPintura=entrada.next();
+				System.out.println("Ingrese el nombre de Autor:");
+				String autorPintura=entrada.next();
+				System.out.println("Ingrese el tipo de pintura:");
+				String tipoPintura=entrada.next();
+				System.out.println("Ingrese el tipo de lienzo:");
+				String tipoLienzo=entrada.next();
+				
+				altaIngresoPintura(pinturas,codigoUnicoPintura,autorPintura,tipoPintura,tipoLienzo);
+				
+				System.out.println("");
+				System.out.println("Ingreso de datos de Escultura");
+				System.out.println("");
+				System.out.println("Ingrese su codigo:");
+				String codigoUnicoEscultura=entrada.next();
+				System.out.println("Ingrese el nombre de Autor:");
+				String autorEscultura=entrada.next();				
+				System.out.println("Ingrese el material usado:");
+				String material=entrada.next();
+				
+				altaIngresoEscultura(esculturas,codigoUnicoEscultura,autorEscultura,material);
+				
+				System.out.println("");
+				System.out.println("Ingreso de datos de fotografia");
+				System.out.println("");
+				System.out.println("Ingrese su codigo:");
+				String codigoUnicFotografia=entrada.next();
+				System.out.println("Ingrese el nombre de Autor:");
+				String autorFotografia=entrada.next();			
+				System.out.println("Ingrese el tipo de camara:");
+				String tipoCamara=entrada.next();
+				
+				altaIngresoFotografia(fotografias,codigoUnicFotografia,autorFotografia,tipoCamara);
+				break;
+			case 2:
+				System.out.println("");
+				System.out.println("Listando");
+				
+				listarPintura(pinturas);
+				System.out.println("");
+				listarEscultura(esculturas);
+				System.out.println("");
+				listarFotografia(fotografias);
+				break;
+				
+			case 3:
+				System.out.println("Saliendo");
+				break;
+					default:
+						System.out.println("Error");
+			}
+		}while(opciones!=3);
+		
+			}
+		
+		
+	
+
+	public static void altaIngresoPintura(Pintura[] ar, String codigoUnicoPintura, String autorPintura,
+			String tipoPintura, String tipoLienzo) {
+		for (int i = 0; i < ar.length; i++)
+			if (ar[i] == null) {
+				ar[i] = new Pintura(codigoUnicoPintura, autorPintura, tipoPintura, tipoLienzo);
+				break;
+			}
+	}
+
+	public static void altaIngresoEscultura(Escultura[] ar, String codigoUnicoEscultura, String autorEscultura,
+			String material) {
+		for (int i = 0; i < ar.length; i++)
+			if (ar[i] == null) {
+				ar[i] = new Escultura(codigoUnicoEscultura, autorEscultura, material);
+				break;
+			}
+	}
+
+	public static void altaIngresoFotografia(Fotografia[] ar, String codigoUnicFotografia, String autorFotografia,
+			String tipoCamara) {
+		for (int i = 0; i < ar.length; i++)
+			if (ar[i] == null) {
+				ar[i] = new Fotografia(codigoUnicFotografia, autorFotografia, tipoCamara);
+				break;
+			}
+	}
+
+	public static void listarPintura(Pintura[] pinturas) {
+		for (int i = 0; i < pinturas.length; i++) {
+			if (pinturas[i] != null) {
+				System.out.println("Pintura");
+				System.out.println("Codigo: " + pinturas[i].getCodigoUnico() + " Autor:" + pinturas[i].getAutor()
+						+ " Tipo de pintura:" + pinturas[i].getTipoPintura() + " Tipo de lienzo"
+						+ pinturas[i].getTipoLienzo());
+
+			}
+		}
+	}
+
+	public static void listarEscultura(Escultura[] esculturas) {
+		for (int i = 0; i < esculturas.length; i++) {
+			if (esculturas[i] != null) {
+				System.out.println("Pintura");
+				System.out.println("Codigo: " + esculturas[i].getCodigoUnico() + " Autor:" + esculturas[i].getAutor()
+						+ " Material:" + esculturas[i].getMaterial());
+
+			}
+		}
+	}
+
+	public static void listarFotografia(Fotografia[] fotografias) {
+		for (int i = 0; i < fotografias.length; i++) {
+			if (fotografias[i] != null) {
+				System.out.println("Pintura");
+				System.out.println("Codigo: " + fotografias[i].getCodigoUnico() + " Autor:" + fotografias[i].getAutor()
+						+ " Tipo de camara:" + fotografias[i].getTipoCamara());
+
+			}
+		}
+	}
+}
