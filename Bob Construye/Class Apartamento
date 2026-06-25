@@ -1,0 +1,20 @@
+package bobConstruye;
+
+public class Apartamento extends Edificio {
+	private String tipoApartamento;
+
+	public String getTipoApartamento() {
+		return tipoApartamento;
+	}
+
+	public void setTipoApartamento(String tipoApartamento) {
+		this.tipoApartamento = tipoApartamento;
+	}
+
+	public Apartamento(String codigoUnico, int cantHabitaciones, int cantPisos, String tipoApartamento) {
+		super(codigoUnico, cantHabitaciones, cantPisos);
+		this.tipoApartamento = tipoApartamento;
+	}
+	
+
+}
