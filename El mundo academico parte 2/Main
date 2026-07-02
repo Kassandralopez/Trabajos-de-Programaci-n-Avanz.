@@ -1,0 +1,580 @@
+package elMundoAcademico;
+
+import java.util.Scanner;
+
+public class Gestor {
+	static Scanner entrada = new Scanner(System.in);
+	   public static void main(String[] args) {
+
+		Revista Revista[] = new Revista[10];
+		Libro Libro[] = new Libro[10];
+		ArticuloCientifico ArticuloCientifico[] = new ArticuloCientifico[10];
+
+		int opciones;
+		int opcionCaseUno;
+		int opcioncasedos;
+		int opcionCaseTres;
+		int opcionBaja;
+		int datoAModif;
+		int datoBModif;
+		int datoCModif;
+		int a = 0;
+
+
+
+		do {
+			System.out.println("Ingrese la opción que desea realizar");
+			System.out.println("1. Ingresar");
+			System.out.println("2.Listar");
+			System.out.println("3.Modificar");
+			System.out.println("4.Dar de baja");
+			System.out.println("5.Salir");
+			opciones = entrada.nextInt();
+			switch (opciones) {
+			case 1:
+				do {
+					System.out.println("1.Ingresar datos de Revista");
+					System.out.println("2.Ingresar datos de Libro");
+					System.out.println("3.Ingresar datos de Articulo Cientifico ");
+					System.out.println("4.Salir");
+					opcionCaseUno = entrada.nextInt();
+
+					switch (opcionCaseUno) {
+					case 1:
+						System.out.println("Ingrese su codigo Unico:");
+						String codigoUnicoRevista=entrada.next();
+						System.out.println("Ingrese la fecha publicada:");
+						String fechaPublicadaRevista = entrada.next();
+						System.out.println("Ingrese el nombre del Autor:");
+						String nombreAutorRevista = entrada.next();
+						System.out.println("Ingresa la cantidad de paginas::");
+						String cantPaginasRevistas = entrada.next();
+						System.out.println("Ingrese el tipo de cosmetico que se encuentra:");
+						String cosmetico = entrada.next();
+						System.out.println("Ingrese el producto que se ofrece:");
+						String producto = entrada.next();
+
+						altaIngresoRevista(Revista, fechaPublicadaRevista, nombreAutorRevista, cantPaginasRevistas,codigoUnicoRevista,
+								cosmetico,producto);
+						break;
+
+					case 2:
+						System.out.println("Libro");
+						System.out.println("Ingrese su codigo Unico:");
+						String codigoUnicoLibro=entrada.next();
+						System.out.println("Ingrese la fecha publicada:");
+						String fechaPublicadaLibro = entrada.next();
+						System.out.println("Ingrese el nombre del Autor:");
+						String nombreAutorLibro = entrada.next();
+						System.out.println("Ingresa la cantidad de paginas::");
+						String cantPaginasLibro = entrada.next();
+						System.out.println("Ingrese la cantidad de capitulos:");
+						String cantCapitulos = entrada.next();
+						System.out.println("Ingrese su trama:");
+						String trama = entrada.next();
+
+						altaIngresoLibro(Libro, fechaPublicadaLibro, nombreAutorLibro, cantPaginasLibro,codigoUnicoLibro, cantCapitulos,
+								trama);
+						break;
+
+					case 3:
+						System.out.println("Articulo Cientifico");
+						System.out.println("Ingrese su codigo Unico:");
+						String codigoUnicoArticulo=entrada.next();
+						System.out.println("Ingrese la fecha publicada:");
+						String fechaPublicadaArticulo = entrada.next();
+						System.out.println("Ingrese el nombre del Autor:");
+						String nombreAutorArticulo = entrada.next();
+						System.out.println("Ingresa la cantidad de paginas::");
+						String cantPaginasArticulo = entrada.next();
+						System.out.println("Tipo de tipologia:");
+						String tipologia = entrada.next();
+						System.out.println("Ingrese la revista donde fue publicado:");
+						String revistaPublicado = entrada.next();
+						altaIngresoArticulo(ArticuloCientifico, fechaPublicadaArticulo, nombreAutorArticulo,codigoUnicoArticulo,
+								cantPaginasArticulo, tipologia, revistaPublicado);
+						break;
+
+					case 4:
+						System.out.println("Saliendo");
+
+					default:
+						System.out.println("Error");
+					}
+				} while (opcionCaseUno != 4);
+				break;
+
+
+
+
+
+			case 2:
+				System.out.println("Listando");
+				do {
+					System.out.println("1.Mostrar Revista");
+					System.out.println("2.Mostrar Libro");
+					System.out.println("3.Mostrar Articulo");
+					System.out.println("4.Salir");
+					opcioncasedos=entrada.nextInt();
+
+					switch (opcioncasedos) {
+					case 1:
+						System.out.println("Mostrando Revista...");
+						listarRevista(Revista);
+
+						break;
+					case 2:
+						System.out.println("Mostrando Libro...");
+						listarLibro(Libro);
+						break;
+					case 3:
+						System.out.println("Mostrando Articulo Cientifico...");
+						listarArticuloCientifico(ArticuloCientifico);
+
+						break;
+
+
+					case 4:
+						System.out.println("Saliendo...");
+
+						break;
+					default:
+						System.out.println("error");
+
+					}
+				} while (opcioncasedos != 4);
+
+				break;
+
+			case 3:
+				System.out.println("Modificacion");
+				do {
+					System.out.println("Ingrese la opcion que desea realizar:");
+					System.out.println("1.Modificar Revista");
+					System.out.println("2.Modificar Libro");
+					System.out.println("3.Modificar Articulo Cientifico");
+					System.out.println("4.Salir");
+					opcionCaseTres=entrada.nextInt();
+					switch(opcionCaseTres) {
+					case 1: 
+						System.out.println("Modificar Revista");
+
+						do {
+
+							System.out.println("Ingrese el dato que deseas modificar:");
+							System.out.println("1.Fecha Publicada");
+							System.out.println("2.Nombre de Autor");
+							System.out.println("3.Cantidad de paginas");
+							System.out.println("4.Cosmetico");
+							System.out.println("5.Producto");
+							System.out.println("6.Salir");
+							datoAModif=entrada.nextInt();
+							switch(datoAModif) {										 	
+							case 1:
+								System.out.println("Modificar fecha publicada");
+								System.out.println("Ingrese la nueva fecha:");
+								String nuevoDato=entrada.next();
+								ModificarRevista(Revista,datoAModif, nuevoDato);
+
+								break;
+							case 2:
+								System.out.println("Modificar nombre de autor");
+								System.out.println("Ingrese nuevo nombre de autor:");
+								nuevoDato=entrada.next();
+								ModificarRevista(Revista, datoAModif, nuevoDato);
+
+								break;
+							case 3:
+								System.out.println("Modificar cantidad de paginas");
+								System.out.println("Ingrese la nueva cantidad de paginas:");
+								nuevoDato=entrada.next();
+								ModificarRevista(Revista, datoAModif, nuevoDato);
+
+								break;
+							case 4:
+								System.out.println("Modificar cosmeticos");
+								System.out.println("Ingrese el nuevo cosmetico:");
+								nuevoDato=entrada.next();
+								ModificarRevista(Revista, datoAModif, nuevoDato);
+
+								break;
+							case 5:
+								System.out.println("Modificar productos");
+								System.out.println("Ingrese el nuevo producto:");
+								nuevoDato=entrada.next();
+								ModificarRevista(Revista, datoAModif, nuevoDato);
+
+								break;
+							case 6:
+								System.out.println("Saliendo");
+							default:
+								System.out.println("Hubo un error");
+							}
+						}while (datoAModif !=6);
+						break;
+
+					case 2:
+						System.out.println("Modificar Libro");		
+						do {
+							System.out.println("Ingrese el dato que deseas modificar:");
+							System.out.println("1.Fecha Publicada");
+							System.out.println("2.Nombre de Autor");
+							System.out.println("3.Cantidad de paginas");
+							System.out.println("4.Cantidad de capitulo");
+							System.out.println("5.Trama");
+							System.out.println("6.Salir");
+							datoBModif=entrada.nextInt();
+							switch(datoBModif) {
+							case 1:
+								System.out.println("Modificar fecha publicada");
+								System.out.println("Ingrese nueva fecha:");
+								String nuevoDato=entrada.next();
+								ModificarLibro(Libro, datoBModif, nuevoDato);
+								break;
+							case 2:
+								System.out.println("Modificar nombre de autor");
+								System.out.println("Ingrese nuevo nombre de autor:");
+								nuevoDato=entrada.next();
+								ModificarLibro(Libro, datoBModif, nuevoDato);
+								break;
+							case 3:
+								System.out.println("Modificar cantidad de paginas");
+								System.out.println("Ingrese nuevo cantidad de paginas:");
+								nuevoDato=entrada.next();
+								ModificarLibro(Libro, datoBModif, nuevoDato);
+								break;
+							case 4:
+								System.out.println("Modificar cantidad de capitulos");
+								System.out.println("Ingrese nuevo cantidad de capitulos:");
+								nuevoDato=entrada.next();
+								ModificarLibro(Libro, datoBModif, nuevoDato);
+								break;
+							case 5:
+								System.out.println("Trama del libro:");
+								System.out.println("Ingrese nuevo trama del libro:");
+								nuevoDato=entrada.next();
+								ModificarLibro(Libro, datoBModif, nuevoDato);
+								break;
+							case 6:
+								System.out.println("Saliendo");
+								break;
+							default:
+								System.out.println("Hubo un error");
+							}
+						}while (datoBModif !=6);
+						break;
+
+
+					case 3:
+						System.out.println("Modificar Articulo Cientifico");
+						do {
+							System.out.println("Ingrese el dato que deseas modificar:");
+							System.out.println("1.Fecha Publicada");
+							System.out.println("2.Nombre de Autor");
+							System.out.println("3.Cantidad de paginas");
+							System.out.println("4.Tipo de tipologia");
+							System.out.println("5.Revista Publicada");
+							System.out.println("6.Salir");
+							datoCModif=entrada.nextInt();
+							switch(datoCModif) {
+							case 1:
+								System.out.println("Modificar fecha publicada");
+								System.out.println("Ingrese el nuevo dato:");
+								String nuevoDato=entrada.next();
+								ModificarArticulo(ArticuloCientifico, datoCModif, nuevoDato);
+
+								break;
+							case 2:
+								System.out.println("Modificar nombre de autor");
+								System.out.println("Ingrese nuevo nombre de autor:");
+								nuevoDato=entrada.next();
+								ModificarArticulo(ArticuloCientifico, datoCModif, nuevoDato);
+
+								break;
+							case 3:
+								System.out.println("Modificar cantidad de paginas");
+								System.out.println("Ingrese nuevo cantidad de paginas:");
+								nuevoDato=entrada.next();
+								ModificarArticulo(ArticuloCientifico, datoCModif, nuevoDato);
+
+								break;
+							case 4:
+								System.out.println("Modificar tipologia");
+								System.out.println("Ingrese nuevo tipologia:");
+								nuevoDato=entrada.next();
+								ModificarArticulo(ArticuloCientifico, datoCModif, nuevoDato);
+
+								break;
+							case 5:
+								System.out.println("Modificar revista publicada");
+								System.out.println("Ingrese nuevo revista publicado:");
+								nuevoDato=entrada.next();
+								ModificarArticulo(ArticuloCientifico, datoCModif, nuevoDato);
+
+								break;
+							case 6:
+								System.out.println("Saliendo");
+							default:
+								System.out.println("Error");
+							}
+						}while(datoCModif!=6);
+						break;
+					case 4:
+						System.out.println("Saliendo");
+						default:
+							System.out.println("Error");
+					}
+				}while(opcionCaseTres!=4);
+							
+					case 4:
+						System.out.println("Dar de baja");
+						do {
+							System.out.println("1.Dar de baja Revista");
+							System.out.println("2.Dar de baja Libro");
+							System.out.println("3.Dar de baja Articulo Cientifico");
+							System.out.println("4.Salir");
+							opcionBaja=entrada.nextInt();
+
+							switch(opcionBaja) {
+							case 1:
+								bajaRevista(Revista);
+								break;
+							case 2:
+								bajaLibro(Libro);
+								break;
+							case 3:
+								bajaArticulo(ArticuloCientifico);
+								break;
+							case 4:
+								System.out.println("Saliendo");
+								break;
+							default:
+								System.out.println("Error");
+							}
+						} while(opcionBaja!=4);
+						break;
+					case 5:
+						System.out.println("Saliendo");
+
+						break;
+					default:
+						System.out.println("Error");
+					}
+
+
+				} while (opciones!= 5);
+			}
+
+	
+			
+		
+	
+
+		public static void bajaRevista(Revista[] ar) {
+			for (int i = 0; i < ar.length; i++) {
+
+				if (ar[i] != null) {
+					System.out.println("Codigo  " + ar[i].codigoUnico());
+
+					System.out.println("Ingrese el codigo de revista que desea borrar:");
+					String codigoBorrar = entrada.next();
+					if (ar[i].codigoUnico().equals(codigoBorrar)) {
+						ar[i] = null;
+					}
+				}
+			}
+		}
+
+		public static void bajaLibro(Libro[] ar) {
+			for (int i = 0; i < ar.length; i++) {
+
+				if (ar[i] != null) {
+					System.out.println("Codigo  " + ar[i].codigoUnico());
+
+					System.out.println("Ingrese el codigo del libro que desea borrar:");
+					String codigoBorrar = entrada.next();
+					if (ar[i].codigoUnico().equals(codigoBorrar)) {
+						ar[i] = null;
+					}
+				}
+			}
+		}
+
+		public static void bajaArticulo(ArticuloCientifico[] ar) {
+			for (int i = 0; i < ar.length; i++) {
+
+				if (ar[i] != null) {
+					System.out.println("Codigo  " + ar[i].codigoUnico());
+
+					System.out.println("Ingrese el codigo del articulo que desea borrar:");
+					String codigoBorrar = entrada.next();
+					if (ar[i].codigoUnico().equals(codigoBorrar)) {
+						ar[i] = null;
+					}
+				}
+			}
+		}
+
+		public static void ModificarLibro(Libro[] ar, int datoBModif, String nuevoDato) {
+			System.out.println("Ingrese el Codigo del libro que desea modificar:");
+			String codigoActualLibro = entrada.next();
+			for (int i = 0; i < ar.length; i++) {
+				if (ar[i] != null && ar[i].codigoUnico().equals(codigoActualLibro)) {
+					switch (datoBModif) {
+					case 1:
+						ar[i].setFechaPublicada(nuevoDato);
+						break;
+					case 2:
+						ar[i].setAutor(nuevoDato);
+						break;
+					case 3:
+						ar[i].setCantPaginas(nuevoDato);
+						break;
+					case 4:
+						ar[i].setCantCapitulos(nuevoDato);
+						break;
+					case 5:
+						ar[i].setTrama(nuevoDato);
+						break;
+					}
+					System.out.println("Guardado");
+					return;
+				}
+			}
+		}
+
+		public static void ModificarArticulo(ArticuloCientifico[] ar, int datoCModif, String nuevoDato) {
+			System.out.println("Ingrese el Codigo del libro que desea modificar:");
+			String codigoActualArticulo = entrada.next();
+			for (int i = 0; i < ar.length; i++) {
+				if (ar[i] != null && ar[i].codigoUnico().equals(codigoActualArticulo)) {
+					switch (datoCModif) {
+					case 1:
+						ar[i].setFechaPublicada(nuevoDato);
+						break;
+					case 2:
+						ar[i].setAutor(nuevoDato);
+						break;
+					case 3:
+						ar[i].setCantPaginas(nuevoDato);
+						break;
+					case 4:
+						ar[i].setTipologia(nuevoDato);
+						break;
+					case 5:
+						ar[i].setRevistaPublicado(nuevoDato);
+						break;
+					}
+					System.out.println("Guardado");
+					return;
+				}
+			}
+		}
+
+		public static void ModificarRevista(Revista[] ar, int datoAModif, String nuevoDato) {
+			System.out.println("Ingrese el Codigo del libro que desea modificar:");
+			String codigoActualRevista = entrada.next();
+			for (int i = 0; i < ar.length; i++) {
+				if (ar[i] != null && ar[i].codigoUnico().equals(codigoActualRevista)) {
+					switch (datoAModif) {
+					case 1:
+						ar[i].setFechaPublicada(nuevoDato);
+						break;
+					case 2:
+						ar[i].setAutor(nuevoDato);
+						break;
+					case 3:
+						ar[i].setCantPaginas(nuevoDato);
+						break;
+					case 4:
+						ar[i].setCosmetico(nuevoDato);
+						break;
+					case 5:
+						ar[i].setProducto(nuevoDato);
+						break;
+					}
+					System.out.println("Guardado");
+					return;
+
+				}
+			}
+
+		}
+
+
+		public static void listarRevista(Revista[] Revista) {
+
+			for (int i = 0; i < Revista.length; i++) {
+
+				if (Revista[i] != null) {
+					System.out.println("Codigo Unico de Revista:" + Revista[i].codigoUnico());
+					System.out.println("Datos del autor: " + Revista[i].getAutor());
+					System.out.println("Fecha de publicacion:" + Revista[i].getFechaPublicada());
+					System.out.println("Cantidad de paginas:" + Revista[i].getCantPaginas());
+					System.out.println("Tipo de cosmetico que hay:" + Revista[i].getCosmetico());
+					System.out.println("Tipo de productos hay:" + Revista[i].getProducto());
+				}
+			}
+		}
+
+		public static void listarLibro(Libro[] Libro) {
+
+			for (int i = 0; i < Libro.length; i++) {
+				if (Libro[i] != null) {
+
+					System.out.println("Codigo Unico de Libro:" + Libro[i].codigoUnico());
+					System.out.println("Datos del autor: " + Libro[i].getAutor());
+					System.out.println("Fecha de publicacion:" + Libro[i].getFechaPublicada());
+					System.out.println("Cantidad de paginas:" + Libro[i].getCantPaginas());
+					System.out.println("El trama que hay:" + Libro[i].getTrama());
+					System.out.println("Cantidad de capitulos que hay:" + Libro[i].getCantCapitulos());
+				}
+			}
+		}
+
+		public static void listarArticuloCientifico(ArticuloCientifico[] ArticuloCientifico) {
+
+			for (int i = 0; i < ArticuloCientifico.length; i++) {
+				if (ArticuloCientifico[i] != null) {
+
+					System.out.println("Codigo Unico de Articulo Cientifico:" + ArticuloCientifico[i].codigoUnico());
+					System.out.println("Datos del autor: " + ArticuloCientifico[i].getAutor());
+					System.out.println("Fecha de publicacion:" + ArticuloCientifico[i].getFechaPublicada());
+					System.out.println("Cantidad de paginas:" + ArticuloCientifico[i].getCantPaginas());
+					System.out.println("Tipo de Tipologia que hay:" + ArticuloCientifico[i].getTipologia());
+					System.out.println("Donde se publicó::" + ArticuloCientifico[i].getRevistaPublicado());
+				}
+			}
+		}
+
+		public static void altaIngresoRevista(Revista[] ar, String fechaPublicadaRevista, String nombreAutorRevista,
+				String cantPaginasRevista, String codigoUnicoRevista, String cosmetico, String producto) {
+			for (int i = 0; i < ar.length; i++)
+				if (ar[i] == null) {
+					ar[i] = new Revista(fechaPublicadaRevista, nombreAutorRevista, cantPaginasRevista, codigoUnicoRevista,
+							cosmetico, producto);
+					break;
+				}
+		}
+
+		public static void altaIngresoLibro(Libro[] ar, String fechaPublicadaLibro, String nombreAutorLibro,
+				String cantPaginasLibro, String codigoUnicoLibro, String cantCapitulos, String trama) {
+			for (int i = 0; i < ar.length; i++)
+				if (ar[i] == null) {
+					ar[i] = new Libro(fechaPublicadaLibro, nombreAutorLibro, cantPaginasLibro, codigoUnicoLibro,
+							cantCapitulos, trama);
+					break;
+				}
+		}
+
+		public static void altaIngresoArticulo(ArticuloCientifico[] ar, String fechaPublicadaArticulo,
+				String nombreAutorArticulo, String cantPaginasArticulo, String codigoUnicoArticulo, String tipologia,
+				String revistaPublicado) {
+			for (int i = 0; i < ar.length; i++)
+				if (ar[i] == null) {
+					ar[i] = new ArticuloCientifico(fechaPublicadaArticulo, nombreAutorArticulo, cantPaginasArticulo,
+							codigoUnicoArticulo, tipologia, revistaPublicado);
+					break;
+				}
+		}
+	}
