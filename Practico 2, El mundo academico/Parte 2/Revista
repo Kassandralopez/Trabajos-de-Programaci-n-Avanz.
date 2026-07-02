@@ -1,0 +1,26 @@
+package elMundoAcademico;
+
+public class Revista extends Publicacion {
+	
+	public String getCosmetico() {
+		return cosmetico;
+	}
+	public void setCosmetico(String cosmetico) {
+		this.cosmetico = cosmetico;
+	}
+	public String getProducto() {
+		return producto;
+	}
+	public void setProducto(String producto) {
+		this.producto = producto;
+	}
+	private String cosmetico;
+	private String producto;
+	
+	public Revista(String fechaPublicada, String autor, String cantPaginas,String codigoUnico,String cosmetico,String producto) {
+		super(fechaPublicada, autor, cantPaginas,codigoUnico);
+		this.cosmetico = cosmetico;
+		this.producto = producto;
+	}
+
+}
