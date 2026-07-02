@@ -1,0 +1,24 @@
+package elMundoAcademico;
+public class ArticuloCientifico extends Publicacion{
+	private String tipologia;
+	private String revistaPublicado;
+	
+	public String getTipologia() {
+		return tipologia;
+	}
+	public void setTipologia(String tipologia) {
+		this.tipologia = tipologia;
+	}
+	public String getRevistaPublicado() {
+		return revistaPublicado;
+	}
+	public void setRevistaPublicado(String revistaPublicado) {
+		this.revistaPublicado = revistaPublicado;
+	}
+	public ArticuloCientifico(String fechaPublicada, String autor, String cantPaginas, String codigoUnico,
+			String tipologia, String revistaPublicado) {
+		super(fechaPublicada, autor, cantPaginas, codigoUnico);
+		this.tipologia = tipologia;
+		this.revistaPublicado = revistaPublicado;
+	}
+}
