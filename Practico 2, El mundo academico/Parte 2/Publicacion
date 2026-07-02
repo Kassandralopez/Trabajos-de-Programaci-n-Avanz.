@@ -1,0 +1,43 @@
+package elMundoAcademico;
+
+public abstract class Publicacion {
+	private String fechaPublicada;
+	private String autor;
+	private String cantPaginas;
+	private String codigoUnico;
+	
+	public String getFechaPublicada() {
+		return fechaPublicada;
+	}
+	public void setFechaPublicada(String fechaPublicada) {
+		this.fechaPublicada = fechaPublicada;
+	}
+	public String getAutor() {
+		return autor;
+	}
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	public String getCantPaginas() {
+		return cantPaginas;
+	}
+	public void setCantPaginas(String cantPaginas) {
+		this.cantPaginas = cantPaginas;
+	}
+	public String codigoUnico() {
+		return codigoUnico;
+	}
+	public void setcodigoUnico(String codigoUnico) {
+		this.codigoUnico = codigoUnico;
+	}
+	public Publicacion(String fechaPublicada, String 
+			autor, String cantPaginas,String codigoUnico) {
+		super();
+		this.fechaPublicada = fechaPublicada;
+		this.autor = autor;
+		this.cantPaginas = cantPaginas;
+		this.codigoUnico=codigoUnico;
+	}
+	
+
+}
