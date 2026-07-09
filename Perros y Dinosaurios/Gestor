@@ -1,0 +1,106 @@
+package nueveDeJulio;
+
+import java.util.Scanner;
+
+public class Gestor {
+	static Scanner entrada=new Scanner(System.in);
+
+	public static void main(String[] args) {
+		Dinosaurio dino = new Dinosaurio ("Ramiro");
+		Perro perrito = new Perro ("Bruno");
+		int opcionDormir;
+		int opcionComer;
+		int opcionMenu;
+		
+		do { 
+			System.out.println("Bienvenido ");
+			System.out.println("Ingrese la opcion que desea");
+			System.out.println("1.Dormir a los animales");
+			System.out.println("2.Darle de comer");
+			System.out.println("3.Salir");
+			 opcionMenu = entrada.nextInt();
+			
+			switch(opcionMenu) {
+			case 1:
+				System.out.println("Ingrese que animal quiere dormir");
+				do {
+				System.out.println("1. Perro");
+				System.out.println("2.Dinosaurio");
+				System.out.println("3.Salir");
+				 opcionDormir=entrada.nextInt();
+				
+					switch (opcionDormir) {
+					case 1: 
+						dormir(perrito);		
+						break;
+					case 2:
+						dormir(dino);
+					break;
+					case 3: 
+						System.out.println("Saliendo");
+						default:
+							System.out.println("Error");
+							break;
+					}
+				}while(opcionDormir != 3);
+				break;
+			case 2:
+				System.out.println("Ingrese el animal que desea alimentar");
+				do {
+					System.out.println("1.Perro");
+					System.out.println("2. Dinosaurio");
+					System.out.println("3.Salir");		
+					opcionComer=entrada.nextInt();
+					
+					switch (opcionComer) {
+					case 1: 
+						comer(perrito);
+						break;
+					case 2:
+						comer(dino);
+						break;
+					case 3:
+						System.out.println("Saliendo");
+						break;
+						
+						default: 
+							System.out.println("Error");
+							break;
+					}
+				}while (opcionComer != 3);
+					break;
+			case 3:
+				System.out.println("Saliendo, gracias por usar nuestro programa");
+				break;
+			default:
+				System.out.println("Error");
+				break;
+			}
+
+
+		} while (opcionMenu!= 3);
+	}
+
+	private static void dormir(Dinosaurio dino) {
+		System.out.println("El dinosaurio esta durmiendo");
+		
+	}
+
+	private static void dormir(Perro perrito) {
+		System.out.println("El perro esta durmiendo");
+		
+	}
+
+	private static void comer(Dinosaurio dino) {
+		System.out.println("El dinosaurio acaba de comer 5kg de comida");
+		
+	}
+	private static void comer(Perro perrito) {
+		System.out.println("El perro acaba de comer 600 gr de comida");
+		
+	}
+				
+}
+	
+
+
