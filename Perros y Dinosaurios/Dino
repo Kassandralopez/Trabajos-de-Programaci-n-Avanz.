@@ -1,0 +1,24 @@
+package nueveDeJulio;
+
+public class Dinosaurio implements acciones{
+	String nombreDino;
+	
+	public void comer() {
+		System.out.println("El dinosaurio acaba de comer 5kg de comida");
+	}
+	public void dormir() {
+		System.out.println("El dinosaurio esta durmiendo");
+		
+	}
+	public String getNombreDino() {
+		return nombreDino;
+	}
+	public void setNombreDino(String nombreDino) {
+		this.nombreDino = nombreDino;
+		
+	}
+	public Dinosaurio(String nombreDino) {
+		super();
+		this.nombreDino = nombreDino;
+	}
+}
