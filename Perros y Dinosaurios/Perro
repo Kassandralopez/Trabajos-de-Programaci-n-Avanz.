@@ -1,0 +1,25 @@
+package nueveDeJulio;
+
+public class Perro implements acciones {
+	String nombrePerro;
+	
+	public void comer() {
+		System.out.println("El perro acaba de comer 600 gr de comida");
+		
+	}
+	public void dormir() {
+		System.out.println("El perro esta durmiendo");
+	}
+	public String getNombrePerro() {
+		return nombrePerro;
+	}
+
+	public void setNombrePerro(String nombrePerro) {
+		this.nombrePerro = nombrePerro;
+	}
+	public Perro(String nombrePerro) {
+	super();
+	this.nombrePerro = nombrePerro;
+	}
+}
+
