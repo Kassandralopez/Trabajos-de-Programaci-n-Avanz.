@@ -7,8 +7,55 @@ public class Main {
 		Empleado empleados [] = new Empleado [10];
 		Encargado encargados [] = new Encargado [10];
 		
-		
-		
+		int opciones;
+		String codigoDueño;
+		String codigoEncargado;
+		String codigoEmpleado;
+			System.out.println("Ingrese codigo de Dueño:");
+			codigoDueño = entrada.next();
+			System.out.println("Ingrese codigo de Encargado:");
+			codigoEncargado = entrada.next();
+			System.out.println("Ingrese codigo de empleado:");
+			codigoEmpleado = entrada.next();
+			
+			do {
+				System.out.println("Ingrese la opcion correspondiente:");
+				System.out.println("1. Dueño");
+				System.out.println("2.Encargado");
+				System.out.println("3.Empleado");
+				System.out.println("4.Salir");
+				opciones=entrada.nextInt();
+				
+				switch (opciones) {
+				case 1: 
+					System.out.println("Ingrese codigo:");
+					String codigoIngresadoDueño = entrada.next();
+						if (codigoIngresadoDueño == codigoDueño) {
+							System.out.println("Se enviara el mensaje al empleado:");
+							dueño.enviarMail();
+						}else { 
+							System.out.println("Error, los codigos no coinciden");
+						}
+				
+				
+				
+				}
+				
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+			
 		
 	}
 
