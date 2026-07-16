@@ -1,0 +1,26 @@
+package mail;
+
+public abstract class Empleado extends Persona implements acciones{
+	private String codigoEmpleado;
+
+	public String getCodigoEmpleado() {
+		return codigoEmpleado;
+	}
+
+	public void setCodigoEmpleado(String codigoEmpleado) {
+		this.codigoEmpleado = codigoEmpleado;
+	}
+
+	public Empleado(String nombre, String cargo, String cedula, String codigoEmpleado) {
+		super(nombre, cargo, cedula);
+		this.codigoEmpleado = codigoEmpleado;
+	}
+	
+	public void enviarMail() {
+		System.out.println("Empleado ha enviado un mensaje al Encargado");
+			
+		}
+	}
+	
+
+
