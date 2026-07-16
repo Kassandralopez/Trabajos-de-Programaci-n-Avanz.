@@ -1,0 +1,15 @@
+package mail;
+import java.util.Scanner;
+public class Main {
+	static Scanner entrada = new Scanner (System.in);
+	public static void main(String[] args) {
+		Dueño dueños [] = new Dueño [10];
+		Empleado empleados [] = new Empleado [10];
+		Encargado encargados [] = new Encargado [10];
+		
+		
+		
+		
+	}
+
+}
