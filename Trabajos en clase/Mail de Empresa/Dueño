@@ -1,0 +1,24 @@
+package mail;
+
+public abstract class Dueño extends Persona implements acciones {
+	private String codigoDueño;
+
+	public String getCodigoDueño() {
+		return codigoDueño;
+	}
+
+	public void setCodigoDueño(String codigoDueño) {
+		this.codigoDueño = codigoDueño;
+	}
+
+	public Dueño(String nombre, String cargo, String cedula, String codigoDueño) {
+		super(nombre, cargo, cedula);
+		this.codigoDueño = codigoDueño;
+	}
+
+
+
+	public void enviarMail() {
+		System.out.println("Dueño ha enviado un mensaje a Encargado");
+	}
+}
