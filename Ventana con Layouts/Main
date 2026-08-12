@@ -1,0 +1,14 @@
+package EjercicioConLayout;
+
+
+public class main {
+
+	public static void main(String[] args) {
+PrimerVentana ventana1=new PrimerVentana();
+		ventana1.setVisible(true);
+	}
+
+}
+	
+
+
