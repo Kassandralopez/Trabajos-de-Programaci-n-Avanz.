@@ -1,0 +1,56 @@
+package EjercicioConLayout;
+import javax.swing.*;
+import java.awt.*;
+public class PrimerVentana extends JFrame{
+
+		public PrimerVentana() {
+			String[]Rol= {"Administrador", "Docente", "Visitante"};
+
+			this.setTitle("Registrar Usuario");
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			this.setSize(600,400);
+			this.setLocationRelativeTo(null);
+			this.setResizable(false);
+			
+			JPanel panel1 = new JPanel();
+			panel1.setLayout(new GridLayout(6,2));
+
+			panel1.setBackground(Color.LIGHT_GRAY);
+			JLabel nombre = new JLabel ("Nombre");
+			JLabel apellido = new JLabel ("Apellido");
+			JLabel ci = new JLabel ("Cedula");
+			JLabel edad = new JLabel ("Edad");
+			JLabel rol = new JLabel ("Rol");
+			
+			JTextField textoNombre = new JTextField (10);
+			JTextField textoApellido = new JTextField (10);
+			JTextField textoCedula = new JTextField (10);
+			JTextField textoEdad = new JTextField (10);
+			JComboBox textoRol = new JComboBox (Rol);
+			
+			JButton boton = new JButton ("Registrar");
+			
+			panel1.add(nombre);
+			panel1.add(textoNombre);
+			
+			panel1.add(apellido);
+			panel1.add(textoApellido);
+			
+			panel1.add(ci);
+			panel1.add(textoCedula);
+			
+			panel1.add(edad);
+			panel1.add(textoEdad);
+			
+			panel1.add(rol);
+			panel1.add(textoRol);
+			
+			panel1.add(boton);
+			
+			this.add(panel1);
+			
+			
+			
+			
+		}
+}
